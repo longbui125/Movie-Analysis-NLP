@@ -41,11 +41,11 @@ def get_character_network(subtitles_path, ner_path):
 
 def chat_with_character_chatbot(message, history):
     character_chatbot = CharacterChatBot("longbui125/Chatbot_Llama-3-8B",
-                                         huggingface_token = os.getenv('huggingface_token')
+                                         huggingface_token = os.getenv('HUGGINGFACE_TOKEN')
                                          )
 
     output = character_chatbot.chat(message, history)
-    output = output['content'].strip()
+    output = output.strip()
     return output
 
 def main():
@@ -87,7 +87,7 @@ def main():
                         get_network_graph_buttion.click(get_character_network, inputs=[subtitles_path, ner_path], outputs=[network_html])
 
 
-    iface.launch()
+    iface.launch(share=True)
             
 
 if __name__ == "__main__":
