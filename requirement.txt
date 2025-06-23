@@ -1,0 +1,6 @@
+transformers==4.44.0
+huggingface_hub==0.24.5
+nltk==3.8.1
+gradio==4.44.1
+
+love, romance, comedy, drama, business, office, friendship, family, fake dating, jealousy, secret relationship, CEO, marriage, humor, betrayal, conflict, dating, romantic comedy
