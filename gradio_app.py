@@ -39,14 +39,14 @@ def get_character_network(subtitles_path, ner_path):
 
     return html
 
-def chat_with_character_chatbot(message, history):
-    character_chatbot = CharacterChatBot("longbui125/Chatbot_Llama-3-8B",
-                                         huggingface_token = os.getenv('HUGGINGFACE_TOKEN')
-                                         )
+character_chatbot = CharacterChatBot(
+    "longbui125/Chatbot_Llama-3-8B",
+    huggingface_token=os.getenv('HUGGINGFACE_TOKEN')
+)
 
+def chat_with_character_chatbot(message, history):
     output = character_chatbot.chat(message, history)
-    output = output.strip()
-    return output
+    return output.strip()
 
 def main():
     with gr.Blocks() as iface:
